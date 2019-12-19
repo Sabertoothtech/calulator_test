@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anagha's Division Function</title>
+</head>
+<body>
+     <h3>Enter Numbers: </h3>
+     <input type="number" id="x">
+     <input type="number" id="y">
+
+     <button onclick="calculate_division()">Calculate Division</button><br/><br/>
+     <p id="result"></p>
+</body>
+</html>
+
+
+<script>
+
+function calculate_division(){
+        num1 = document.getElementById("x").value;
+        num2 = document.getElementById("y").value;
+        num3 = document.getElementById("result").value;
+        num3 = num1 / num2;
+        console.log(num3);
+        document.getElementById("result").append(num3);
+
+}
+
+</script>
