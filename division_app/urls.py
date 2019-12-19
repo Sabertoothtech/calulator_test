@@ -17,5 +17,5 @@ from django.urls import path
 from division_app import views
 
 urlpatterns = [
-    path('', views.division, name='division'),
+    path('division/', views.division, name='division'),
 ]
