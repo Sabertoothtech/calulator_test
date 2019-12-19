@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multiply Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 style="text-align: center">Multiply Calculator</h1>
+    <div class="row" style="margin-top: 5%">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+
+            <div class="row">
+                <div class="col-sm-6" style="background-color:lavender;">
+                    <label>Enter First Number</label>
+                </div>
+                <div class="col-sm-6" style="background-color:lavender;">
+                    <input type="number" class="form-control" id="firstno")>
+                    <span style="display: none;color:red;" id="err_firstno">Please Enter Value</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" style="background-color:lavender;">
+                    <label>Enter Second Number</label>
+                </div>
+                <div class="col-sm-6" style="background-color:lavender;">
+                    <input type="number" class="form-control" id="secondno")>
+                    <span style="display: none;color:red;" id="err_secondno">Please Enter Value</span>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <button type="button" class="btn btn-primary" style="width: 100%" onclick="CalculateResult()">
+                    Calculate
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-sm-6" style="background-color:lavender;">
+                    <label>Total</label>
+                </div>
+                <div class="col-sm-6" style="background-color:lavender;">
+                    <input type="number" class="form-control" id="total" readonly>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+
+    });
+
+
+
+    function CalculateResult() {
+        var firstno = $("#firstno").val();
+        var secondno = $("#secondno").val();
+
+        if(firstno == ""){
+            $("#err_firstno").show();
+        }
+        else if(secondno == ""){
+            $("#err_secondno").show();
+        }else{
+            $.ajax({
+                url : "/CalculateResult/",
+                method : "POST",
+                data : {
+                    "firstno":firstno,
+                    "secondno":secondno,
+
+                },
+                success : function (response) {
+                    $("#total").val(response['result'])
+
+                }
+            })
+        }
+    }
+
+
+</script>
+</html>ml>
