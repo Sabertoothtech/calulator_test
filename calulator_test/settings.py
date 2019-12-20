@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'abhical',
-    'multiply_app',
-    'adil_calculator'
+    'adil_calculator',
     'multiply_app',
     'modulus_app'
 ]
