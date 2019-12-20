@@ -20,6 +20,6 @@ from adil_calculator import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.calculator, name='calculator'),
+    path('adil_calculator', views.calculator, name='calculator'),
     path('result/', views.caculateresult, name='result')
 ]
