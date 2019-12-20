@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'abhical',
     'multiply_app',
     'adil_calculator'
+    'multiply_app',
+    'modulus_app'
 ]
 
 MIDDLEWARE = [

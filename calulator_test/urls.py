@@ -20,10 +20,6 @@ from adil_calculator import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('division_app.urls')),
-    path('', include('multiply_app.urls')),
-    path('adil_calculator', views.calculator, name='calculator'),
-    path('result/', views.caculateresult, name='result')
-    path('',include('abhical.urls')),
+    path('',include('modulus_app.urls')),
 
 ]
