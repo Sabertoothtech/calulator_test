@@ -1,0 +1,41 @@
+{% extends 'indexbase.html' %}
+{% block content %}
+
+    {% load static %}
+    <form id="calculation" method="post" enctype="multipart/form-data">
+        <div class="form-inner">
+            <h1>Multiplication</h1>
+            <h3 style="color:red" id="error"></h3>
+            <input type="number" placeholder="input 1" id="input1" required>
+            <input type="number" placeholder="input 2" id="input2" required >
+            <textarea placeholder="Message..." rows="5" id="result"></textarea>
+            <button type="submit" href="/">Submit</button>
+            <img src="{% static "hills.jpg" %}">
+        </div>
+    </form>
+    <script>
+        $("#calculation").submit(function (e) {
+            e.preventDefault();
+            var input1 = $("#input1").val()
+            var input2 = $("#input2").val()
+            $.ajax({
+                url: "/result/",
+                method: "POST",
+                data: {
+                    "input1": input1,
+                    "input2": input2,
+                },
+                success: function (response) {
+                    console.log(response)
+                    if (response["result"] < 0) {
+                        $("#error").html("Answer is negative")
+                    }
+                    else {
+                        $("#result").val("")
+                        $("#result").val(response['result'])
+                    }
+                }
+            })
+        })
+    </script>
+{% endblock content %}
