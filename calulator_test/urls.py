@@ -14,10 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import path
+from adil_calculator import views
+
 from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('multiply_app.urls')),
 
+    path('adil_calculator', views.calculator, name='calculator'),
+    path('result/', views.caculateresult, name='result')
 ]
