@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from calculator_adil import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.calculator, name='calculator'),
+    path('result/', views.caculateresult, name='result')
 ]
