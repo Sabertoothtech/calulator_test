@@ -5,6 +5,6 @@ from abhical import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('addition', views.calculator, name='calculator'),
-    path('CalculateResult/', views.CalculateResult, name='CalculateResult'),
+    path('CalculateResults/', views.CalculateResult, name='CalculateResult'),
 ]
 

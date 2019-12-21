@@ -24,7 +24,7 @@ urlpatterns = [
     path('', include('division_app.urls')),
     path('', include('multiply_app.urls')),
     path('adil_calculator', views.calculator, name='calculator'),
-    path('result/', views.caculateresult, name='result')
+    path('result/', views.caculateresult, name='result'),
     path('',include('abhical.urls')),
 
 ]
